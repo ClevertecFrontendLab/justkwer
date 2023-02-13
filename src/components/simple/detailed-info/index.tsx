@@ -1,4 +1,4 @@
-import { H5 } from '../../../core/theme';
+import { H5 } from '@core/theme';
 
 import { DetailedInfoStyled } from './styled';
 

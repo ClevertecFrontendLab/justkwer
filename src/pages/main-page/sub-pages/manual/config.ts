@@ -1,4 +1,4 @@
-import { SubPageProp } from '../../../../core/types';
+import { SubPageProp } from '@core/types';
 
 export const config: SubPageProp = {
   title: 'Правила пользования',

@@ -1,5 +1,5 @@
-import { Section } from '../../core/theme';
-import { MainPages } from '../../layout';
+import { Section } from '@core/theme';
+import { MainPages } from '@layout';
 
 import { MainPageStyled } from './styled';
 

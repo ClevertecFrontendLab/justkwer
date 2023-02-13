@@ -1,6 +1,5 @@
 import { Fragment } from 'react';
-
-import { PageGeneratorProp } from '../../../core/types';
+import { PageGeneratorProp } from '@core/types';
 
 import { PageGeneratorStyled } from './styled';
 

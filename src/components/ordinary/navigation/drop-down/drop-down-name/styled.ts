@@ -1,6 +1,5 @@
+import { Active } from '@core/theme';
 import styled from 'styled-components';
-
-import { Active } from '../../../../../core/theme';
 
 export const DropDownNameStyled = styled.div<{ isOpen: boolean; active: boolean }>`
   ${({ theme }) => theme.flex.row};

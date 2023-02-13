@@ -1,4 +1,4 @@
-import { arrRating, noRating } from '../../../core/constants';
+import { arrRating, noRating } from '@core/constants';
 
 import { RatingStyled, StarStyled } from './styled';
 

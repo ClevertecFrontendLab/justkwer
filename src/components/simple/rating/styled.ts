@@ -1,6 +1,5 @@
+import { Star } from '@assets';
 import styled from 'styled-components';
-
-import { Star } from '../../../assets';
 
 export const RatingStyled = styled.div`
   ${({ theme }) => theme.flex.row};

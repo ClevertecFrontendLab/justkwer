@@ -1,4 +1,5 @@
-import { Filter } from '../../../../../../assets';
+import { Filter } from '@assets';
+
 import { FilterBarStyled } from '../styled';
 
 export const FilterBar = () => (

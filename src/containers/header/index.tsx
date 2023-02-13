@@ -1,5 +1,5 @@
-import { HeaderMenu } from '../../components';
-import { Section } from '../../core/theme';
+import { HeaderMenu } from '@components';
+import { Section } from '@core/theme';
 
 export const Header = () => (
   <header>

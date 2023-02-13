@@ -1,7 +1,6 @@
 import { FC } from 'react';
-
-import { FeedbackProp } from '../../../core/types';
-import { Rating } from '../rating';
+import { Rating } from '@components/simple/rating';
+import { FeedbackProp } from '@core/types';
 
 import { FeedbackStyled, FeedbackUserStyled } from './styled';
 

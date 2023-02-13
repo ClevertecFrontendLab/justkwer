@@ -1,5 +1,5 @@
-import { Separator, Signature, Socials } from '../../components';
-import { Section } from '../../core/theme';
+import { Separator, Signature, Socials } from '@components';
+import { Section } from '@core/theme';
 
 export const Footer = () => (
   <footer>

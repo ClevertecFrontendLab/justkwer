@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
+import { LinkCustom } from '@components';
+import { PathsToPage } from '@core/constants';
 
-import { PathsToPage } from '../../../../../core/constants';
-import { LinkCustom } from '../../../..';
 import { DropDownLinkProp } from '../prop';
 
 import { DropDownLinkStyled } from './styled';

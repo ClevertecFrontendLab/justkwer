@@ -1,6 +1,5 @@
+import { Active, Link } from '@core/theme';
 import styled from 'styled-components';
-
-import { Active, Link } from '../../../core/theme';
 
 export const NavigationStyled = styled.nav`
   ${({ theme }) => theme.flex.column};

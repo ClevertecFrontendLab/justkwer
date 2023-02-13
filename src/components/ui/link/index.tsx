@@ -1,4 +1,4 @@
-import { LinkCustomProp } from '../../../core/types';
+import { LinkCustomProp } from '@core/types';
 
 import { LinkCustomStyled } from './styled';
 

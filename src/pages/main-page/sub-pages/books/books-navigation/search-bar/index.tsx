@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect } from 'react';
+import { InputX, Search } from '@assets';
+import { localKeyText, searchTextDef } from '@core/constants';
+import { SearchBarProps } from '@core/types';
 
-import { InputX, Search } from '../../../../../../assets';
-import { localKeyText, searchTextDef } from '../../../../../../core/constants';
-import { SearchBarProps } from '../../../../../../core/types';
 import { SearchBarBtnStyled, SearchBarStyled } from '../styled';
 
 export const SearchBar = ({ setSearchText, text, visible, setVisible }: SearchBarProps) => {

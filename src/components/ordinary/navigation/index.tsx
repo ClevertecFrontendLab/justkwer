@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
-import { navLink } from '../../../core/constants';
+import { navLink } from '@core/constants';
 
 import { DropDown } from './drop-down';
 import { NavigationStyled } from './styled';

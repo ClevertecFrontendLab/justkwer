@@ -1,4 +1,4 @@
-import { H3 } from '../../../core/theme';
+import { H3 } from '@core/theme';
 
 import { PersonProfileStyled } from './styled';
 

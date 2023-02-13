@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
+import { DropDownButton } from '@assets';
+import { H3 } from '@core/theme';
 
-import { DropDownButton } from '../../../../../assets';
-import { H3 } from '../../../../../core/theme';
 import { DropDownNameProps } from '../prop';
 
 import { DropDownNameStyled } from './styled';

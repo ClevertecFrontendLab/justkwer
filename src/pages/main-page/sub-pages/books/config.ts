@@ -1,5 +1,5 @@
-import { book, book1, book2, book3, user } from '../../../../assets';
-import { BookItemProp } from '../../../../core/types';
+import { book, book1, book2, book3, user } from '@assets';
+import { BookItemProp } from '@core/types';
 
 export const config: BookItemProp[] = [
   {

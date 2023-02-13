@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkendin, Vk } from '../../assets';
+import { Facebook, Instagram, Linkendin, Vk } from '@assets';
 
 export const enum PathsToPage {
   Main = '/',

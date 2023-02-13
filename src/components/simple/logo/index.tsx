@@ -1,5 +1,5 @@
-import { Cleverland, LogoSvg } from '../../../assets';
-import { PathsToPage } from '../../../core/constants';
+import { Cleverland, LogoSvg } from '@assets';
+import { PathsToPage } from '@core/constants';
 
 import { LogoStyled } from './styled';
 

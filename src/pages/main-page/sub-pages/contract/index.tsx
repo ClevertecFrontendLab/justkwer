@@ -1,5 +1,6 @@
-import { PageGenerator } from '../../../../components';
-import { H2 } from '../../../../core/theme';
+import { PageGenerator } from '@components';
+import { H2 } from '@core/theme';
+
 import { ManualStyled } from '../manual/styled';
 
 import { config } from './config';

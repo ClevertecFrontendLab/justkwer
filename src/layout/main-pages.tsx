@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
-
-import { Navigation } from '../components';
+import { Navigation } from '@components';
 
 export const MainPages = () => (
   <Fragment>

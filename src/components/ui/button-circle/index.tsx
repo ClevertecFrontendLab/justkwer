@@ -1,4 +1,4 @@
-import { ButtonCircleProp } from '../../../core/types';
+import { ButtonCircleProp } from '@core/types';
 
 import { ButtonCircleStyled } from './styled';
 

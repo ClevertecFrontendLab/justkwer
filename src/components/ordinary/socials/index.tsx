@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-
-import { social } from '../../../core/constants';
+import { social } from '@core/constants';
 
 import { SocialsStyled } from './styled';
 

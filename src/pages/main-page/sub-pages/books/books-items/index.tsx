@@ -1,5 +1,5 @@
-import { BookItemsProp } from '../../../../../core/types';
-import { BookCard } from '../../../../book-page/book';
+import { BookItemsProp } from '@core/types';
+import { BookCard } from '@pages/book-page/book';
 
 import { BookItemsStyled } from './styled';
 

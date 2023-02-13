@@ -1,4 +1,4 @@
-import { ButtonProp } from '../../../core/types';
+import { ButtonProp } from '@core/types';
 
 import { ButtonStyled } from './styled';
 

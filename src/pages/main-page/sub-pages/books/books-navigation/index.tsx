@@ -1,9 +1,8 @@
 import { Fragment, MouseEvent, useState } from 'react';
-
-import { List, Tale } from '../../../../../assets';
-import { ButtonCircle } from '../../../../../components';
-import { localKeyText, searchTextDef } from '../../../../../core/constants';
-import { BooksNavigationProp } from '../../../../../core/types';
+import { List, Tale } from '@assets';
+import { ButtonCircle } from '@components';
+import { localKeyText, searchTextDef } from '@core/constants';
+import { BooksNavigationProp } from '@core/types';
 
 import { FilterBar } from './filter-bar';
 import { SearchBar } from './search-bar';

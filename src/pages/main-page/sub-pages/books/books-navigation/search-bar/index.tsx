@@ -1,23 +1,21 @@
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
+import { useDispatch } from 'react-redux';
 import { InputX, Search } from '@assets';
-import { localKeyText, searchTextDef } from '@core/constants';
+import { searchTextDef } from '@core/constants';
+import { useAppSelector } from '@core/hooks/redux';
 import { SearchBarProps } from '@core/types';
+import { changeText } from '@store/reducers/form';
 
 import { SearchBarBtnStyled, SearchBarStyled } from '../styled';
 
-export const SearchBar = ({ setSearchText, text, visible, setVisible }: SearchBarProps) => {
+export const SearchBar = ({ visible, setVisible }: SearchBarProps) => {
+  const text = useAppSelector((state) => state.form.text);
+  const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trim();
 
-    setSearchText(value === '' ? searchTextDef : value);
+    dispatch(changeText(value === '' ? searchTextDef : value));
   };
-
-  useEffect(
-    () => () => {
-      localStorage.setItem(localKeyText, text === '' ? searchTextDef : text);
-    },
-    [text]
-  );
 
   return (
     <SearchBarStyled active={visible}>

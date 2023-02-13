@@ -1,19 +1,18 @@
 import { Fragment, MouseEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { List, Tale } from '@assets';
 import { ButtonCircle } from '@components';
-import { localKeyText, searchTextDef } from '@core/constants';
-import { BooksNavigationProp } from '@core/types';
+import { toggleList } from '@store/reducers/form';
 
 import { FilterBar } from './filter-bar';
 import { SearchBar } from './search-bar';
 import { BooksNavigationStyled } from './styled';
 
-export const BooksNavigation = ({ setNavState, navState }: BooksNavigationProp) => {
-  const getTextDef = () => localStorage.getItem(localKeyText) ?? searchTextDef;
-
-  const [searchText, setSearchText] = useState(getTextDef());
+export const BooksNavigation = () => {
   const [isActive, setIsActive] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
+
+  const dispatch = useDispatch();
 
   const handleClickVisible = () => {
     setIsVisible(!isVisible);
@@ -22,12 +21,12 @@ export const BooksNavigation = ({ setNavState, navState }: BooksNavigationProp) 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsActive(!isActive);
-    setNavState({ isList: !navState.isList });
+    dispatch(toggleList());
   };
 
   return (
     <BooksNavigationStyled visible={isVisible}>
-      <SearchBar setSearchText={setSearchText} text={searchText} visible={isVisible} setVisible={handleClickVisible} />
+      <SearchBar visible={isVisible} setVisible={handleClickVisible} />
       {isVisible && (
         <Fragment>
           <FilterBar />

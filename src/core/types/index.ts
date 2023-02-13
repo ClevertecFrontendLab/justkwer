@@ -6,8 +6,8 @@ export type {
   ButtonCircleProp,
   BookItemProp,
   ButtonProp,
-  BooksNavigationProp,
   BookItemsProp,
   BookInfoProp,
   FeedbackProp,
+  FormState,
 } from './types';

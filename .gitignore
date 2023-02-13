@@ -29,7 +29,4 @@ yarn-error.log*
 cypress/screenshots
 cypress/videos
 /.yarn/
-/.idea/.gitignore
-/.idea/Clevertec2.iml
-/.idea/modules.xml
-/.idea/vcs.xml
+/.idea/

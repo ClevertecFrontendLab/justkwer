@@ -1,4 +1,4 @@
-import { Dispatch, MouseEvent, MouseEventHandler, ReactNode, SetStateAction } from 'react';
+import { MouseEvent, MouseEventHandler, ReactNode } from 'react';
 
 export type SubPageProp = {
   title: string;
@@ -37,8 +37,6 @@ export type FeedbackProp = {
 export type LinkCustomProp = { name: string; link: string; amount?: number };
 
 export type SearchBarProps = {
-  setSearchText: (text: string) => void;
-  text: string;
   visible: boolean;
   setVisible: MouseEventHandler<HTMLDivElement | HTMLButtonElement>;
 };
@@ -55,14 +53,8 @@ export type ButtonProp = {
   children?: ReactNode;
 };
 
-export type BooksNavigationProp = {
-  setNavState: Dispatch<SetStateAction<BookItemsProp['display']>>;
-  navState: BookItemsProp['display'];
-};
-
 export type BookItemsProp = {
   data: BookItemProp[];
-  display: { isList: boolean };
 };
 
 export type BookInfoProp = {
@@ -71,4 +63,10 @@ export type BookInfoProp = {
   author: string;
   status: [boolean, string];
   about: string[];
+};
+
+export type FormState = {
+  text: string;
+  filter: boolean;
+  list: boolean;
 };

@@ -1,14 +1,16 @@
 import { useNavigate } from 'react-router-dom';
-
-import { Cat } from '../../../../assets';
-import { Button, Rating } from '../../../../components';
-import { BookItemProp } from '../../../../core/types';
+import { Cat } from '@assets';
+import { Button, Rating } from '@components';
+import { useAppSelector } from '@core/hooks/redux';
+import { BookItemProp } from '@core/types';
 
 import { BookCardStyled, FigureStyled } from './styled';
 
-export const BookCard = ({ display, ...props }: { display: boolean } & BookItemProp) => {
+export const BookCard = ({ ...props }: BookItemProp) => {
   const { img, rating, name, author, status, url } = props;
+  const display = useAppSelector((state) => state.form.list);
   const navigate = useNavigate();
+
   const handleClick = () => navigate(`/book/${url}/${name}`, { state: { ...props } });
 
   return (

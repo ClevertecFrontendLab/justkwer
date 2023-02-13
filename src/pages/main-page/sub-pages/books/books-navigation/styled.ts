@@ -29,7 +29,16 @@ const BooksNavBtnStyled = styled.div`
   }
 `;
 
-export const FilterBarStyled = styled(BooksNavBtnStyled)`
+export const FilterBarStyled = styled(BooksNavBtnStyled)<{ active: boolean }>`
+  cursor: pointer;
+  color: ${({ theme, active }) => !active && theme.colors.primary};
+
+  svg {
+    fill: ${({ theme, active }) => (active ? theme.colors.greyBlack40 : theme.colors.primary)};
+    transform: ${({ active }) => !active && 'scale(1, -1)'};
+    transition-duration: 0.1s;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.medium}) {
     padding: 9px;
 

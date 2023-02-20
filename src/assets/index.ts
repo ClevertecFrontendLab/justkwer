@@ -1,12 +1,15 @@
+import { ReactComponent as Action } from './icons/action.svg';
 import { ReactComponent as Cat } from './icons/cat.svg';
 import { ReactComponent as Cleverland } from './icons/cleverland.svg';
 import { ReactComponent as DropDownButton } from './icons/drop-down.svg';
+import { ReactComponent as Exclamation } from './icons/exclamation.svg';
 import { ReactComponent as Facebook } from './icons/facebook.svg';
 import { ReactComponent as Filter } from './icons/filter.svg';
 import { ReactComponent as InputX } from './icons/input-x.svg';
 import { ReactComponent as Instagram } from './icons/instagram.svg';
 import { ReactComponent as Linkendin } from './icons/linkendin.svg';
 import { ReactComponent as List } from './icons/list.svg';
+import { ReactComponent as LoadingSvg } from './icons/loading.svg';
 import { ReactComponent as LogoSvg } from './icons/logo.svg';
 import { ReactComponent as Search } from './icons/search.svg';
 import { ReactComponent as Star } from './icons/star.svg';
@@ -35,5 +38,8 @@ export {
   Cat,
   Chevron,
   InputX,
+  LoadingSvg,
+  Exclamation,
+  Action,
 };
 export { book, user, book1, book2, book3 };

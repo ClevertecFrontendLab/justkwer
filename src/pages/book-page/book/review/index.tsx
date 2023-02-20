@@ -1,13 +1,12 @@
 import { FC } from 'react';
-
-import { Feedback } from '../../../../components';
-import { BookItemProp } from '../../../../core/types';
+import { Feedback } from '@components';
+import { BookItem } from '@core/types';
 
 import { BookReviewStyled } from './styled';
 
-export const BookReview: FC<{ reviews: BookItemProp['reviews'] }> = ({ reviews }) => (
+export const BookReview: FC<{ comments: BookItem['comments'] }> = ({ comments }) => (
   <BookReviewStyled>
-    {reviews.map((props) => (
+    {comments?.map((props) => (
       <Feedback key={props.id} {...props} />
     ))}
   </BookReviewStyled>

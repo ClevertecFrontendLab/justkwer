@@ -16,3 +16,5 @@ export { HeaderMenu } from './smart/header-menu';
 export { BurgerMenu } from './smart/burger-menu';
 export { PersonProfile } from './simple/person-profile';
 export { Slider } from './ordinary/slider';
+export { Error } from './simple/error';
+export { Loading } from './simple/loading';

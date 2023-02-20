@@ -1,17 +1,16 @@
 import { useAppSelector } from '@core/hooks/redux';
-import { BookItemsProp } from '@core/types';
 import { BookCard } from '@pages/book-page/book';
 
 import { BookItemsStyled } from './styled';
 
-export const BookItems = ({ data }: BookItemsProp) => {
-  const list = useAppSelector((state) => state.form.list);
+export const BookItems = () => {
+  const { list } = useAppSelector((state) => state.form);
+  const { books } = useAppSelector((state) => state.books);
+  const { error } = useAppSelector((state) => state.books);
 
   return (
     <BookItemsStyled isWrap={list}>
-      {data.map((props) => (
-        <BookCard {...props} key={props.id} />
-      ))}
+      {books && !error && books.map((props) => <BookCard {...props} key={props.id} />)}
     </BookItemsStyled>
   );
 };

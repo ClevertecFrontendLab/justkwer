@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux';
 import { InputX, Search } from '@assets';
 import { searchTextDef } from '@core/constants';
 import { useAppSelector } from '@core/hooks/redux';
-import { SearchBarProps } from '@core/types';
+import { SearchBarProp } from '@core/types';
 import { changeText } from '@store/reducers/form';
 
 import { SearchBarBtnStyled, SearchBarStyled } from '../styled';
 
-export const SearchBar = ({ visible, setVisible }: SearchBarProps) => {
-  const text = useAppSelector((state) => state.form.text);
+export const SearchBar = ({ visible, setVisible }: SearchBarProp) => {
+  const { text } = useAppSelector((state) => state.form);
   const dispatch = useDispatch();
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.trim();

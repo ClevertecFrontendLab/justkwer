@@ -14,6 +14,8 @@ export const theme: DefaultTheme = {
     black: '#000000',
     white: '#FFFFFF',
     yellow: '#FFBC1F',
+    error: '#FEEBEA',
+    negative: '#F42C4F',
   },
   sizes: {
     container: {

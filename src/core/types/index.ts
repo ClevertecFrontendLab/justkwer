@@ -1,13 +1,16 @@
 export type {
   PageGeneratorProp,
-  LinkCustomProp,
   SubPageProp,
-  SearchBarProps,
+  SearchBarProp,
   ButtonCircleProp,
-  BookItemProp,
   ButtonProp,
-  BookItemsProp,
   BookInfoProp,
   FeedbackProp,
   FormState,
+  BooksState,
+  BookState,
+  BookContentProp,
+  DateOptions,
 } from './types';
+
+export type { BookItems, BookItem, CommentsProp, Categories } from './interface';

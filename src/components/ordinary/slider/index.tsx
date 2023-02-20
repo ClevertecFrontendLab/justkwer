@@ -1,4 +1,6 @@
 import { FC, useState } from 'react';
+import { apiUrl } from '@core/constants';
+import { BookItem } from '@core/types';
 import { FreeMode, Navigation, Thumbs } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperClass from 'swiper/types/swiper-class';
@@ -10,7 +12,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-export const Slider: FC<{ images: string[] }> = ({ images }) => {
+export const Slider: FC<{ images: BookItem['images'] }> = ({ images }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass>();
 
   return (
@@ -24,8 +26,8 @@ export const Slider: FC<{ images: string[] }> = ({ images }) => {
         className='mySwiper2'
       >
         {images.map((item) => (
-          <SwiperSlide key={item}>
-            <img src={item} alt='book images' />
+          <SwiperSlide key={item.url}>
+            <img src={apiUrl + item.url} alt='book images' />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -39,8 +41,8 @@ export const Slider: FC<{ images: string[] }> = ({ images }) => {
         className='mySwiper'
       >
         {images.map((item) => (
-          <SwiperSlide key={item} data-test-id='slide-mini' className='swiper-pagination-bullet'>
-            <img src={item} alt='book images' />
+          <SwiperSlide key={item.url} data-test-id='slide-mini' className='swiper-pagination-bullet'>
+            <img src={apiUrl + item.url} alt='book images' />
           </SwiperSlide>
         ))}
       </Swiper>

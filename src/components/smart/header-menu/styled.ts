@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderMenuStyled = styled.div`
+  position: relative;
   ${({ theme }) => theme.flex.row};
   justify-content: start;
   gap: 120px;

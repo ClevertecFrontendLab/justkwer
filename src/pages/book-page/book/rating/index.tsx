@@ -1,9 +1,11 @@
-import { Rating } from '../../../../components';
-import { H4 } from '../../../../core/theme';
+import { FC } from 'react';
+import { Rating } from '@components';
+import { H4 } from '@core/theme';
+import { BookItems } from '@core/types';
 
 import { BookRatingStyled } from './styled';
 
-export const BookRating = ({ rating }: { rating?: number }) => (
+export const BookRating: FC<{ rating: BookItems['rating'] }> = ({ rating }) => (
   <BookRatingStyled>
     <H4>Рейтинг</H4>
     <div>

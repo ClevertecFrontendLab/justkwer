@@ -1,8 +1,10 @@
+import { FC } from 'react';
+
 import { BookUrlStyled } from './styled';
 
-export const BookUrl = ({ url, name }: { url: string; name: string }) => (
+export const BookUrl: FC<{ category: string; title: string }> = ({ category, title }) => (
   <BookUrlStyled>
-    {url} / {name}
+    {category} / {title}
     <div />
   </BookUrlStyled>
 );

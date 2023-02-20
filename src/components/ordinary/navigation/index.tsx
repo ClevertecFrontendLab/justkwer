@@ -19,9 +19,7 @@ export const Navigation: FC<{ burger: boolean }> = ({ burger }) => {
   return (
     <NavigationStyled>
       {navLink.map((props) =>
-        props.links ? (
-          <DropDown {...props} isActive={isVisible} burger={burger} handleClick={handleClick} />
-        ) : (
+        props.link ? (
           <NavLink
             to={props.link}
             key={props.key}
@@ -30,6 +28,8 @@ export const Navigation: FC<{ burger: boolean }> = ({ burger }) => {
           >
             {props.name}
           </NavLink>
+        ) : (
+          <DropDown {...props} isActive={isVisible} burger={burger} handleClick={handleClick} />
         )
       )}
     </NavigationStyled>

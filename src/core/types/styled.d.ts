@@ -15,6 +15,8 @@ declare module 'styled-components' {
       black: string;
       white: string;
       yellow: string;
+      error: string;
+      negative: string;
     };
     sizes: {
       container: {

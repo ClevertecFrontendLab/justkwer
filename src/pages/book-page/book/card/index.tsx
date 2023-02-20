@@ -1,26 +1,33 @@
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Cat } from '@assets';
 import { Button, Rating } from '@components';
+import { apiUrl, cardDateOptions } from '@core/constants';
 import { useAppSelector } from '@core/hooks/redux';
-import { BookItemProp } from '@core/types';
+import { BookItems } from '@core/types';
+import { getDate } from '@core/utils';
 
 import { BookCardStyled, FigureStyled } from './styled';
 
-export const BookCard = ({ ...props }: BookItemProp) => {
-  const { img, rating, name, author, status, url } = props;
-  const display = useAppSelector((state) => state.form.list);
+export const BookCard: FC<BookItems> = ({ ...props }) => {
+  const { image, rating, title, authors, id, issueYear, booking } = props;
+  const { list } = useAppSelector((state) => state.form);
   const navigate = useNavigate();
 
-  const handleClick = () => navigate(`/book/${url}/${name}`, { state: { ...props } });
+  const handleClick = () => navigate(`/book/${id}`);
 
   return (
-    <BookCardStyled isWrap={display} onClick={handleClick} data-test-id='card'>
-      <FigureStyled img={img}>{img ? <img src={img[0]} alt={name} /> : <Cat />}</FigureStyled>
+    <BookCardStyled isWrap={list} onClick={handleClick} data-test-id='card'>
+      <FigureStyled img={!!image}>{image ? <img src={apiUrl + image.url} alt={title} /> : <Cat />}</FigureStyled>
       <figcaption>
         <Rating rating={rating} />
-        <h3>{name}</h3>
-        <span>{author}</span>
-        <Button active={status[0]}>{status[1]}</Button>
+        <h3>{title}</h3>
+        <span>
+          {authors}, {issueYear}
+        </span>
+        <Button active={!booking}>
+          {booking?.dateOrder ? `Занята до ${getDate(booking.dateOrder, cardDateOptions)}` : 'Забронировать'}
+        </Button>
       </figcaption>
     </BookCardStyled>
   );

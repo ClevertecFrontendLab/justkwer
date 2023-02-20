@@ -105,6 +105,17 @@ export const BookCardStyled = styled.div<{ isWrap: boolean }>`
     align-items: start;
   }
 
+  h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+  }
+
   h3,
   span,
   div {
@@ -124,11 +135,11 @@ export const BookCardStyled = styled.div<{ isWrap: boolean }>`
   }
 `;
 
-export const FigureStyled = styled.figure<{ img?: string[] }>`
+export const FigureStyled = styled.figure<{ img: boolean }>`
   display: flex;
-
-  ${({ img, theme }) => img ?? `background: ${theme.colors.greyBlack}`};
+  ${({ img, theme }) => img && `background: ${theme.colors.greyBlack}`};
   border: 1px solid ${({ theme }) => theme.colors.greyBlack40};
+  justify-content: center;
 
   svg {
     margin: auto;

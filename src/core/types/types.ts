@@ -1,4 +1,5 @@
-import { MouseEvent, MouseEventHandler, ReactNode } from 'react';
+import { MouseEvent, MouseEventHandler } from 'react';
+import { BookItem, BookItems, Categories } from '@core/types';
 
 export type SubPageProp = {
   title: string;
@@ -11,20 +12,6 @@ export type PageGeneratorProp = {
   paragraph?: PageGeneratorProp[];
 };
 
-export type BookItemProp = {
-  id: number;
-  url: string;
-  img?: string[];
-  rating?: number;
-  name: string;
-  author: string;
-  status: [boolean, string];
-  about: string[];
-  info: string[][];
-  reviews: FeedbackProp[];
-  feedback: [boolean, string];
-};
-
 export type FeedbackProp = {
   id: number;
   avatar: string;
@@ -34,15 +21,12 @@ export type FeedbackProp = {
   text?: string;
 };
 
-export type LinkCustomProp = { name: string; link: string; amount?: number };
-
-export type SearchBarProps = {
+export type SearchBarProp = {
   visible: boolean;
   setVisible: MouseEventHandler<HTMLDivElement | HTMLButtonElement>;
 };
 
 export type ButtonCircleProp = {
-  children?: ReactNode;
   isActive: boolean;
   dataTestId?: string;
   onClick: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -50,23 +34,47 @@ export type ButtonCircleProp = {
 
 export type ButtonProp = {
   active?: boolean;
-  children?: ReactNode;
-};
-
-export type BookItemsProp = {
-  data: BookItemProp[];
 };
 
 export type BookInfoProp = {
-  img?: string[];
-  name: string;
-  author: string;
-  status: [boolean, string];
-  about: string[];
+  img: BookItem['images'];
+  name: BookItem['title'];
+  author: BookItem['authors'];
+  booking: BookItem['booking'];
+  about: BookItem['description'];
 };
 
 export type FormState = {
   text: string;
   filter: boolean;
   list: boolean;
+};
+
+export type BooksState = {
+  books?: BookItems[];
+  categories?: Categories[];
+  error: boolean;
+  loading: boolean;
+};
+
+export type BookState = {
+  book: BookItem | object;
+};
+
+export type BookContentProp = {
+  publish: BookItem['publish'];
+  pages: BookItem['pages'];
+  cover: BookItem['cover'];
+  weight: BookItem['weight'];
+  format: BookItem['format'];
+  ISBN: BookItem['ISBN'];
+  producer: BookItem['producer'];
+  categories: BookItem['categories'];
+  issueYear: BookItem['issueYear'];
+};
+
+export type DateOptions = {
+  day: 'numeric' | '2-digit' | string;
+  month: 'long' | '2-digit' | string;
+  year?: 'numeric' | string;
 };

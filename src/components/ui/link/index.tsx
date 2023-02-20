@@ -1,10 +1,10 @@
-import { LinkCustomProp } from '@core/types';
+import { Categories } from '@core/types';
 
 import { LinkCustomStyled } from './styled';
 
-export const LinkCustom = ({ name, link, amount }: LinkCustomProp) => (
-  <LinkCustomStyled to={link}>
+export const LinkCustom = ({ name, path, id }: Categories) => (
+  <LinkCustomStyled to={path}>
     {name}
-    <span>{amount}</span>
+    <span>{id}</span>
   </LinkCustomStyled>
 );

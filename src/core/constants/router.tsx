@@ -4,8 +4,8 @@ export const enum PathsToPage {
   Main = '/',
   Manual = '/manual',
   Contract = '/contract',
-  Book = '/book/*',
-  Books = '/books/*',
+  Book = '/books/all/:id',
+  Books = '/books',
   BooksAll = '/books/all',
 }
 

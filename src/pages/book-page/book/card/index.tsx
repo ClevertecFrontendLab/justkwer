@@ -14,7 +14,7 @@ export const BookCard: FC<BookItems> = ({ ...props }) => {
   const { list } = useAppSelector((state) => state.form);
   const navigate = useNavigate();
 
-  const handleClick = () => navigate(`/book/${id}`);
+  const handleClick = () => navigate(`/books/all/${id}`);
 
   return (
     <BookCardStyled isWrap={list} onClick={handleClick} data-test-id='card'>

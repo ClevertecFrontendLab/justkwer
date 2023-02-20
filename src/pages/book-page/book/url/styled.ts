@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const BookUrlStyled = styled.div`
-  position: relative;
   ${({ theme }) => theme.flex.row};
   gap: 4px;
   padding: 20px 0;
@@ -11,8 +10,10 @@ export const BookUrlStyled = styled.div`
 
   div {
     position: absolute;
-    width: 120vw;
-    height: 100%;
+    left: 0;
+    right: 0;
+    height: 64px;
+    width: 100vw;
     background: ${({ theme }) => theme.colors.greyBlack};
     z-index: -1;
   }

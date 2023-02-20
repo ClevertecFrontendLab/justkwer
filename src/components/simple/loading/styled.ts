@@ -1,7 +1,7 @@
 import { rotateKeyframes } from '@core/theme';
 import styled from 'styled-components';
 
-export const LoadingStyled = styled.div`
+export const LoadingStyled = styled.div<{ active: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
@@ -12,6 +12,7 @@ export const LoadingStyled = styled.div`
   backdrop-filter: blur(10px);
   ${({ theme }) => theme.flex.row};
   align-items: center;
+  ${({ active }) => active && 'display: none'};
 
   svg {
     animation: ${rotateKeyframes} 0.6s infinite linear;

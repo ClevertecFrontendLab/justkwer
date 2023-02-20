@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ErrorStyled = styled.div`
+export const ErrorStyled = styled.div<{ active: boolean }>`
   position: absolute;
   z-index: 3;
   top: 64px;
@@ -11,6 +11,7 @@ export const ErrorStyled = styled.div`
   background: ${({ theme }) => theme.colors.error};
   border: 1.5px solid ${({ theme }) => theme.colors.negative};
   border-radius: 5px;
+  ${({ active }) => active && 'display: none'};
 
   button {
     margin-left: auto;

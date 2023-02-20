@@ -1,23 +1,22 @@
 import { Fragment, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Button } from '@components';
 import { feedbackBtn } from '@core/constants';
 import { useAppSelector } from '@core/hooks/redux';
 import { Section } from '@core/theme';
 import { BookItem } from '@core/types';
 import { BookAbout, BookContent, BookInfo, BookRating, BookReviews, BookUrl } from '@pages/book-page/book';
-import { getApiBook } from '@store/reducers/book';
+import { idTransfer } from '@store/reducers/book';
 
 import { BookPageStyled } from './styled';
 
 export const BookPage = () => {
-  const { pathname } = useLocation();
-  const id = pathname.replace(/\/book\//g, '');
+  const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getApiBook(id));
+    if (id) dispatch(idTransfer(id));
   }, [dispatch, id]);
 
   const { book } = useAppSelector((state) => state.book);
@@ -29,9 +28,9 @@ export const BookPage = () => {
   return (
     <BookPageStyled>
       <Section>
-        {book && !error && (
+        <BookUrl category={(categories && categories[0]) || 'Все'} title={title ?? ''} />
+        {issueYear && !error && (
           <Fragment>
-            <BookUrl category={categories[0]} title={title} />
             <BookInfo img={images} name={title} author={authors} booking={booking} about={description} />
             <BookAbout about={description} inFigure={true} />
             <BookRating rating={rating} />

@@ -1,20 +1,20 @@
-import { call, put, takeEvery } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
 import { api } from '@core/api';
 import { BookItem } from '@core/types';
-import { addBook, getApiBook } from '@store/reducers/book';
-import { toggleError } from '@store/reducers/books';
+import { addBook } from '@store/reducers/book';
+import { toggleError, toggleLoading } from '@store/reducers/books';
 import { AxiosResponse } from 'axios';
 
 export function* getBookWorker(action: { payload: string }) {
   try {
-    const { data }: AxiosResponse<BookItem> = yield call(api.get, `/api/books/${action.payload ?? '5'}`);
+    yield put(toggleLoading(true));
+    yield put(addBook({} as BookItem));
+    const { data }: AxiosResponse<BookItem> = yield call(api.get, `/api/books/${action.payload}`);
 
     yield put(addBook(data));
+    yield put(toggleLoading(false));
   } catch {
     yield put(toggleError(true));
+    yield put(toggleLoading(false));
   }
-}
-
-export function* getBookWatcher() {
-  yield takeEvery(getApiBook, getBookWorker);
 }

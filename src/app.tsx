@@ -13,7 +13,7 @@ export const App = () => (
           <Route element={<MainPage />}>
             <Route>
               <Route index={true} element={<Navigate to={PathsToPage.BooksAll} replace={true} />} />
-              <Route path={PathsToPage.BooksAll} element={<Books />} />
+              <Route path={PathsToPage.Books} element={<Books />} />
             </Route>
             <Route path={PathsToPage.Manual} element={<Manual />} />
             <Route path={PathsToPage.Contract} element={<Contract />} />

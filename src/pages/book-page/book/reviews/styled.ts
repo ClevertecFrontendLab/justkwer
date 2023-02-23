@@ -18,12 +18,14 @@ export const BookReviewsStyled = styled.div`
   }
 `;
 
-export const ReviewStyled = styled.div`
+export const ReviewStyled = styled.div<{ active: boolean }>`
   ${({ theme }) => theme.flex.row};
   gap: 24px;
 
   svg {
     fill: ${({ theme }) => theme.colors.dark};
+    ${({ active }) => active && 'transform: rotate(180deg);'};
+    transition-duration: 0.6s;
   }
 
   h4 {

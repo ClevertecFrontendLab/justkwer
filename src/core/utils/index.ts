@@ -1,1 +1,1 @@
-export { getDate } from './functions';
+export { getDate, searchRegExp } from './functions';

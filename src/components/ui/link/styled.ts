@@ -3,6 +3,11 @@ import styled from 'styled-components';
 
 export const LinkCustomStyled = styled(NavLink)`
   padding-left: 4px;
+  ${({ theme }) => theme.flex.row};
+
+  & > p {
+    max-width: max-content;
+  }
 
   span {
     padding-left: 6px;

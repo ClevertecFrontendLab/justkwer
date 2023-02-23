@@ -25,4 +25,11 @@ export const BookItemsStyled = styled.div<{ isWrap: boolean }>`
   ${({ isWrap }) => (isWrap ? Row : Column)};
   justify-content: start;
   border-radius: ${({ theme }) => theme.radius[0]};
+  min-width: 100%;
+
+  & > p {
+    padding-top: 168px;
+    width: 100%;
+    text-align: center;
+  }
 `;

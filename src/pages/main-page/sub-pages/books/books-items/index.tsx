@@ -10,13 +10,9 @@ import { BookItemsStyled } from './styled';
 
 export const BookItems = () => {
   const { category } = useParams();
-  const { categories } = useAppSelector((state) => state.books);
-  const { books } = useAppSelector((state) => state.books);
-  const { error } = useAppSelector((state) => state.books);
+  const { categories, books, error } = useAppSelector((state) => state.books);
 
-  const { list } = useAppSelector((state) => state.form);
-  const { filter } = useAppSelector((state) => state.form);
-  const { text } = useAppSelector((state) => state.form);
+  const { list, filter, text } = useAppSelector((state) => state.form);
 
   const categoryFilter = categories?.find((el) => el.path === category)?.name;
 
@@ -47,7 +43,7 @@ export const BookItems = () => {
         resultBooks?.length === 0 ? (
           <P data-test-id='search-result-not-found'>По запросу ничего не найдено</P>
         ) : (
-          resultBooks?.map((props) => <BookCard {...props} key={props.id} />)
+          resultBooks?.map((props) => <BookCard {...props} key={props.id} category={category} />)
         )
       ) : (
         <P data-test-id='empty-category'>В этой категории книг ещё нет</P>

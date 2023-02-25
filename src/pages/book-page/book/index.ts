@@ -1,5 +1,5 @@
 export { BookAbout } from './about';
-export { BookCard } from './card';
+export { BookCard } from '../../main-page/sub-pages/books/books-items/card';
 export { BookContent } from './content';
 export { BookDetailed } from './detailed';
 export { BookInfo } from './info';

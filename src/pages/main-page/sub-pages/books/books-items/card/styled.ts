@@ -116,7 +116,8 @@ export const BookCardStyled = styled.div<{ isWrap: boolean }>`
     line-clamp: 3;
 
     & > span {
-      color: red;
+      color: ${({ theme }) => theme.colors.accent};
+      font-size: inherit;
     }
   }
 

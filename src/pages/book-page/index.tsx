@@ -12,7 +12,7 @@ import { idTransfer } from '@store/reducers/book';
 import { BookPageStyled } from './styled';
 
 export const BookPage = () => {
-  const { id } = useParams();
+  const { id, category } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export const BookPage = () => {
   return (
     <BookPageStyled>
       <Section>
-        <BookUrl category={(categories && categories[0]) || 'Все'} title={title ?? ''} />
+        <BookUrl category={category ?? 'Все'} title={title ?? ''} />
         {issueYear && !error && (
           <Fragment>
             <BookInfo img={images} name={title} author={authors} booking={booking} about={description} />

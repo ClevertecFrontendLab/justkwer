@@ -31,10 +31,9 @@ const BooksNavBtnStyled = styled.div`
 
 export const FilterBarStyled = styled(BooksNavBtnStyled)<{ active: boolean }>`
   cursor: pointer;
-  color: ${({ theme, active }) => !active && theme.colors.primary};
 
   svg {
-    fill: ${({ theme, active }) => (active ? theme.colors.greyBlack40 : theme.colors.primary)};
+    fill: ${({ theme }) => theme.colors.greyBlack40};
     transform: ${({ active }) => !active && 'scale(1, -1)'};
     transition-duration: 0.1s;
   }
@@ -48,11 +47,12 @@ export const FilterBarStyled = styled(BooksNavBtnStyled)<{ active: boolean }>`
   }
 `;
 
-export const SearchBarStyled = styled(BooksNavBtnStyled)<{ active: boolean }>`
+export const SearchBarStyled = styled(BooksNavBtnStyled)<{ active: boolean; isFocus: boolean }>`
   & > svg {
     pointer-events: none;
     display: ${({ active }) => !active && 'none'};
     min-width: 16px;
+    fill: ${({ theme, isFocus }) => (isFocus ? theme.colors.primary : theme.colors.greyBlack40)};
   }
 
   input {

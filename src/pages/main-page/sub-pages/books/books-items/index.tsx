@@ -21,21 +21,22 @@ export const BookItems = () => {
     [category, books, categoryFilter]
   );
 
-  const filteredBooks = useMemo(() => {
-    if (categoryBooks) {
-      return [...categoryBooks].sort((a, b) => ((filter ? b : a).rating ?? 1) - ((filter ? a : b).rating ?? 0));
-    }
+  const filteredBooks = useMemo(
+    () =>
+      categoryBooks
+        ? [...categoryBooks].sort((a, b) => ((filter ? b : a).rating ?? 1) - ((filter ? a : b).rating ?? 0))
+        : categoryBooks,
 
-    return categoryBooks;
-  }, [categoryBooks, filter]);
+    [categoryBooks, filter]
+  );
 
-  const resultBooks = useMemo(() => {
-    if (filteredBooks && text !== searchTextDef) {
-      return filteredBooks.filter((el) => el.title.match(searchRegExp(text)));
-    }
-
-    return filteredBooks;
-  }, [filteredBooks, text]);
+  const resultBooks = useMemo(
+    () =>
+      filteredBooks && text !== searchTextDef
+        ? filteredBooks.filter((el) => el.title.match(searchRegExp(text)))
+        : filteredBooks,
+    [filteredBooks, text]
+  );
 
   return (
     <BookItemsStyled isWrap={list}>

@@ -14,7 +14,7 @@ export const FilterBar = () => {
   };
 
   return (
-    <FilterBarStyled active={filter} onClick={handleClick}>
+    <FilterBarStyled active={filter} onClick={handleClick} data-test-id='sort-rating-button'>
       <Filter />
       <span>По рейтингу</span>
     </FilterBarStyled>

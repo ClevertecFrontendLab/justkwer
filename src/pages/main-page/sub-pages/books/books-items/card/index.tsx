@@ -6,22 +6,24 @@ import { apiUrl, cardDateOptions } from '@core/constants';
 import { useAppSelector } from '@core/hooks/redux';
 import { BookItems } from '@core/types';
 import { getDate } from '@core/utils';
+import { Title } from '@pages/main-page/sub-pages/books/books-items/card/title';
 
 import { BookCardStyled, FigureStyled } from './styled';
 
-export const BookCard: FC<BookItems> = ({ ...props }) => {
-  const { image, rating, title, authors, id, issueYear, booking } = props;
+export const BookCard: FC<BookItems & { category?: string }> = (props) => {
+  const { image, rating, title, authors, id, issueYear, booking, category } = props;
   const { list } = useAppSelector((state) => state.form);
+
   const navigate = useNavigate();
 
-  const handleClick = () => navigate(`/books/all/${id}`);
+  const handleClick = () => navigate(`/books/${category}/${id}`);
 
   return (
     <BookCardStyled isWrap={list} onClick={handleClick} data-test-id='card'>
       <FigureStyled img={!!image}>{image ? <img src={apiUrl + image.url} alt={title} /> : <Cat />}</FigureStyled>
       <figcaption>
         <Rating rating={rating} />
-        <h3>{title}</h3>
+        <Title title={title} />
         <span>
           {authors}, {issueYear}
         </span>

@@ -13,7 +13,7 @@ export const DropDownLink = ({ burger, isOpen }: { burger: boolean; isOpen: bool
       <NavLink to={PathsToPage.BooksAll} data-test-id={burger ? 'burger-books' : 'navigation-books'}>
         Все книги
       </NavLink>
-      {categories && categories.map((props) => <LinkCustom {...props} key={props.id} />)}
+      {categories && categories.map((props) => <LinkCustom {...props} burger={burger} key={props.id} />)}
     </DropDownLinkStyled>
   );
 };

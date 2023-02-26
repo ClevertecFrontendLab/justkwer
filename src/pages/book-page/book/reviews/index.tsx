@@ -16,7 +16,7 @@ export const BookReviews: FC<{ comments: BookItem['comments'] }> = ({ comments }
 
   return (
     <BookReviewsStyled>
-      <ReviewStyled>
+      <ReviewStyled active={isVisible}>
         <H4>
           Отзывы <span>{comments?.length ?? 0}</span>
         </H4>

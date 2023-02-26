@@ -14,7 +14,8 @@ export const BooksNavigation = () => {
 
   const dispatch = useDispatch();
 
-  const handleClickVisible = () => {
+  const handleClickVisible = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     setIsVisible(!isVisible);
   };
 

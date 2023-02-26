@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import { Cat } from '@assets';
 import { Button, Slider } from '@components';
-import { apiUrl } from '@core/constants';
+import { apiUrl, cardDateOptions } from '@core/constants';
 import { H2 } from '@core/theme';
 import { BookInfoProp } from '@core/types';
+import { getDate } from '@core/utils';
+import { FigureStyled } from '@pages/main-page/sub-pages/books/books-items/card/styled';
 
 import { BookAbout } from '../about';
-import { FigureStyled } from '../card/styled';
 
 import { BookInfoDivStyled, BookInfoStyled } from './styled';
 
@@ -21,9 +22,11 @@ export const BookInfo: FC<BookInfoProp> = ({ img, name, author, booking, about }
     )}
     <figcaption>
       <BookInfoDivStyled>
-        <H2>{name}</H2>
+        <H2 data-test-id='book-title'>{name}</H2>
         <span>{author}</span>
-        <Button active={!booking}>{booking?.dateOrder ? `${new Date(booking?.dateOrder)}` : 'Забронировать'}</Button>
+        <Button active={!booking}>
+          {booking?.dateOrder ? `Занята до ${getDate(booking.dateOrder, cardDateOptions)}` : 'Забронировать'}
+        </Button>
       </BookInfoDivStyled>
       <BookAbout about={about} inFigure={false} />
     </figcaption>

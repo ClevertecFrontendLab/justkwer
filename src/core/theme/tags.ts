@@ -16,6 +16,17 @@ export const Active = css`
   background-clip: text;
 `;
 
+const Title = css`
+  font-size: 2rem;
+  line-height: 40px;
+  font-weight: ${({ theme }) => theme.fonts.weight.title};
+
+  @media (max-width: ${({ theme }) => theme.media.medium}) {
+    font-size: 1.125rem;
+    line-height: 28px;
+  }
+`;
+
 export const Section = styled.section`
   max-width: ${({ theme }) => theme.sizes.container.width[0]}px;
   padding: ${({ theme }) => theme.sizes.container.padding[0]};
@@ -32,14 +43,7 @@ export const Section = styled.section`
 `;
 
 export const H1 = styled.h1`
-  font-size: 2rem;
-  line-height: 40px;
-  font-weight: ${({ theme }) => theme.fonts.weight.title};
-
-  @media (max-width: ${({ theme }) => theme.media.medium}) {
-    font-size: 1.125rem;
-    line-height: 28px;
-  }
+  ${Title};
 `;
 
 export const H2 = styled.h2`
@@ -66,5 +70,10 @@ export const H5 = styled.h5`
   font-size: 1rem;
   line-height: 24px;
   font-weight: ${({ theme }) => theme.fonts.weight.secondary};
+  color: ${({ theme }) => theme.colors.greyBlack40};
+`;
+
+export const P = styled.p`
+  ${Title};
   color: ${({ theme }) => theme.colors.greyBlack40};
 `;

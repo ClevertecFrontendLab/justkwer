@@ -114,6 +114,11 @@ export const BookCardStyled = styled.div<{ isWrap: boolean }>`
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     line-clamp: 3;
+
+    & > span {
+      color: ${({ theme }) => theme.colors.accent};
+      font-size: inherit;
+    }
   }
 
   h3,

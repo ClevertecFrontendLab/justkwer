@@ -3,6 +3,12 @@ import styled from 'styled-components';
 
 export const LinkCustomStyled = styled(NavLink)`
   padding-left: 4px;
+  display: inline;
+
+  & > p {
+    max-width: max-content;
+    display: inline;
+  }
 
   span {
     padding-left: 6px;
@@ -15,7 +21,6 @@ export const LinkCustomStyled = styled(NavLink)`
   &.active {
     span {
       color: ${({ theme }) => theme.colors.dark};
-      -webkit-text-fill-color: initial;
       background: none;
     }
   }
